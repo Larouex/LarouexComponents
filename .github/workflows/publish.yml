@@ -22,9 +22,12 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
+          source-url: https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
+        env:
+          NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Restore dependencies
-        run: dotnet restore --source https://api.nuget.org/v3/index.json
+        run: dotnet restore
 
       - name: Build
         run: dotnet build --no-restore --configuration Release
@@ -41,13 +44,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup .NET
+      - name: Setup .NET with GitHub Packages
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
+          source-url: https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
+        env:
+          NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Restore dependencies
-        run: dotnet restore --source https://api.nuget.org/v3/index.json
+        run: dotnet restore
 
       - name: Build
         run: dotnet build --no-restore --configuration Release
@@ -56,11 +62,7 @@ jobs:
         run: dotnet pack --no-build --configuration Release --output ./artifacts
 
       - name: Publish to GitHub Packages
-        run: |
-          dotnet nuget push ./artifacts/*.nupkg \
-            --source https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json \
-            --api-key ${{ secrets.GITHUB_TOKEN }} \
-            --skip-duplicate
+        run: dotnet nuget push ./artifacts/*.nupkg --skip-duplicate
         env:
           NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
