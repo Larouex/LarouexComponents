@@ -28,13 +28,13 @@ jobs:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore Packages.sln
 
       - name: Build
-        run: dotnet build --no-restore --configuration Release
+        run: dotnet build Packages.sln --no-restore --configuration Release
 
       - name: Run tests
-        run: dotnet test --no-build --configuration Release --verbosity normal
+        run: dotnet test Packages.sln --no-build --configuration Release --verbosity normal
 
   publish:
     needs: build-and-test
@@ -51,13 +51,13 @@ jobs:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore Packages.sln
 
       - name: Build
-        run: dotnet build --no-restore --configuration Release
+        run: dotnet build Packages.sln --no-restore --configuration Release
 
       - name: Pack
-        run: dotnet pack --no-build --configuration Release --output ./artifacts
+        run: dotnet pack LarouexComponents.csproj --no-build --configuration Release --output ./artifacts
 
       - name: Publish to GitHub Packages
         run: |
