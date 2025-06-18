@@ -1,0 +1,20 @@
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
+
+<div class="larouex-branding-text @CssClass">
+  @Text
+</div>
+
+@code {
+  /// <summary>
+  /// The text to display. Defaults to "Larouex Software Development"
+  /// </summary>
+  [Parameter]
+  public string Text { get; set; } = "Larouex Software Development";
+
+  /// <summary>
+  /// Additional CSS classes to apply to the component
+  /// </summary>
+  [Parameter]
+  public string CssClass { get; set; } = "";
+}

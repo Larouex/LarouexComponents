@@ -1,0 +1,49 @@
+.larouex-branding-text {
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #2c3e50;
+  text-align: center;
+  padding: 12px 20px;
+  margin: 8px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 8px;
+  border-left: 4px solid #007bff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.larouex-branding-text:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.larouex-branding-text.small {
+  font-size: 0.9rem;
+  padding: 8px 16px;
+}
+
+.larouex-branding-text.large {
+  font-size: 1.5rem;
+  padding: 16px 24px;
+}
+
+.larouex-branding-text.primary {
+  border-left-color: #007bff;
+  color: #0056b3;
+}
+
+.larouex-branding-text.success {
+  border-left-color: #28a745;
+  color: #155724;
+}
+
+.larouex-branding-text.warning {
+  border-left-color: #ffc107;
+  color: #856404;
+}
+
+.larouex-branding-text.danger {
+  border-left-color: #dc3545;
+  color: #721c24;
+}
