@@ -24,7 +24,7 @@ jobs:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore --source https://api.nuget.org/v3/index.json
 
       - name: Build
         run: dotnet build --no-restore --configuration Release
@@ -47,7 +47,7 @@ jobs:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore --source https://api.nuget.org/v3/index.json
 
       - name: Build
         run: dotnet build --no-restore --configuration Release
@@ -58,7 +58,7 @@ jobs:
       - name: Publish to GitHub Packages
         run: |
           dotnet nuget push ./artifacts/*.nupkg \
-            --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" \
+            --source https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json \
             --api-key ${{ secrets.GITHUB_TOKEN }} \
             --skip-duplicate
         env:
