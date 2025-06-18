@@ -2,20 +2,26 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>    <PackageId>LarouexSoftwareDevelopment.LarouexComponents</PackageId>
+    <ImplicitUsings>enable</ImplicitUsings>    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>LarouexSoftwareDevelopment.LarouexComponents</PackageId>
     <PackageVersion>1.0.0</PackageVersion>
     <Authors>Larouex Software Development</Authors>
-    <Company>Larouex Software Development</Company>    <Description>Blazor component library for Larouex Software Development projects</Description>
+    <Company>Larouex Software Development</Company>
+    <Description>Blazor component library for Larouex Software Development projects</Description>
     <Copyright>Copyright © Larouex Software Development 2025</Copyright>
     <RepositoryUrl>https://github.com/Larouex/LarouexComponents</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>blazor;components;ui;larouex</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>See CHANGELOG.md for release notes</PackageReleaseNotes>
-  </PropertyGroup>
+    <PackageReleaseNotes>See CHANGELOG.md for release notes</PackageReleaseNotes>  </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Tests/**" />
+    <Content Remove="Tests/**" />
+    <EmbeddedResource Remove="Tests/**" />
+    <None Remove="Tests/**" />
+  </ItemGroup>
 
   <ItemGroup>
     <SupportedPlatform Include="browser" />

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LarouexComponents Demo</title>
+  <style>
+    /* Import the component styles from the CSS file */
+    .larouex-branding-text {
+      font-family: 'Arial', 'Helvetica', sans-serif;
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: #2c3e50;
+      text-align: center;
+      padding: 12px 20px;
+      margin: 8px 0;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-radius: 8px;
+      border-left: 4px solid #007bff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .larouex-branding-text:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      transform: translateY(-1px);
+    }
+
+    .larouex-branding-text.small {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+
+    .larouex-branding-text.large {
+      font-size: 1.5rem;
+      padding: 16px 24px;
+    }
+
+    .larouex-branding-text.primary {
+      border-left-color: #007bff;
+      color: #0056b3;
+    }
+
+    .larouex-branding-text.success {
+      border-left-color: #28a745;
+      color: #155724;
+    }
+
+    .larouex-branding-text.warning {
+      border-left-color: #ffc107;
+      color: #856404;
+    }
+
+    .larouex-branding-text.danger {
+      border-left-color: #dc3545;
+      color: #721c24;
+    }
+
+    /* Demo page styles */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    .demo-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .demo-section {
+      margin-bottom: 3rem;
+      padding: 2rem;
+      background: #f8f9fa;
+      border-radius: 12px;
+      border: 1px solid #e9ecef;
+    }
+
+    .demo-section:nth-child(even) {
+      background: #ffffff;
+      border-color: #dee2e6;
+    }
+
+    .custom-demo-style {
+      background: linear-gradient(45deg, #ff6b6b, #ffd93d) !important;
+      color: white !important;
+      font-weight: bold !important;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+      border-left-color: #ff6b6b !important;
+    }
+
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      color: #007bff;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      border-bottom: 2px solid #007bff;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+
+    h3 {
+      color: #6c757d;
+      margin: 1.5rem 0 0.5rem 0;
+      font-size: 1.2rem;
+    }
+
+    p {
+      color: #495057;
+      margin-bottom: 1rem;
+    }
+
+    .note {
+      background: #e7f3ff;
+      border-left: 4px solid #007bff;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+
+    .code-block {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+      font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+      border: 1px solid #e9ecef;
+      margin: 10px 0;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="demo-container">
+    <h1>🎨 LarouexComponents BrandingText Demo</h1>
+
+    <div class="note">
+      <strong>Note:</strong> This is a static HTML preview of the BrandingText component styling.
+      In a real Blazor application, these would be rendered as <code>&lt;BrandingText /&gt;</code> components.
+    </div>
+
+    <div class="demo-section">
+      <h2>🏠 Default BrandingText</h2>
+      <p>This shows the component with default settings:</p>
+      <div class="code-block">&lt;BrandingText /&gt;</div>
+      <div class="larouex-branding-text">Larouex Software Development</div>
+    </div>
+
+    <div class="demo-section">
+      <h2>✏️ Custom Text</h2>
+      <p>You can customize the text displayed:</p>
+      <div class="code-block">&lt;BrandingText Text="Welcome to Larouex Software Development!" /&gt;</div>
+      <div class="larouex-branding-text">Welcome to Larouex Software Development!</div>
+    </div>
+
+    <div class="demo-section">
+      <h2>🎨 With Custom CSS Class</h2>
+      <p>Apply additional styling with custom CSS classes:</p>
+      <div class="code-block">&lt;BrandingText Text="Styled Component" CssClass="custom-demo-style" /&gt;</div>
+      <div class="larouex-branding-text custom-demo-style">Styled Component</div>
+    </div>
+
+    <div class="demo-section">
+      <h2>📏 Different Sizes</h2>
+
+      <h3>Small Size</h3>
+      <div class="code-block">&lt;BrandingText Text="Small Size Text" CssClass="small" /&gt;</div>
+      <div class="larouex-branding-text small">Small Size Text</div>
+
+      <h3>Default Size</h3>
+      <div class="code-block">&lt;BrandingText Text="Default Size Text" /&gt;</div>
+      <div class="larouex-branding-text">Default Size Text</div>
+
+      <h3>Large Size</h3>
+      <div class="code-block">&lt;BrandingText Text="Large Size Text" CssClass="large" /&gt;</div>
+      <div class="larouex-branding-text large">Large Size Text</div>
+    </div>
+
+    <div class="demo-section">
+      <h2>🌈 Different Themes</h2>
+
+      <h3>Primary (Default)</h3>
+      <div class="code-block">&lt;BrandingText Text="Primary Theme" CssClass="primary" /&gt;</div>
+      <div class="larouex-branding-text primary">Primary Theme</div>
+
+      <h3>Success</h3>
+      <div class="code-block">&lt;BrandingText Text="Success Theme" CssClass="success" /&gt;</div>
+      <div class="larouex-branding-text success">Success Theme</div>
+
+      <h3>Warning</h3>
+      <div class="code-block">&lt;BrandingText Text="Warning Theme" CssClass="warning" /&gt;</div>
+      <div class="larouex-branding-text warning">Warning Theme</div>
+
+      <h3>Danger</h3>
+      <div class="code-block">&lt;BrandingText Text="Danger Theme" CssClass="danger" /&gt;</div>
+      <div class="larouex-branding-text danger">Danger Theme</div>
+    </div>
+
+    <div class="demo-section">
+      <h2>🔧 Combined Styles</h2>
+      <p>Mix and match size and theme modifiers:</p>
+
+      <div class="code-block">&lt;BrandingText Text="Large Success Message" CssClass="large success" /&gt;</div>
+      <div class="larouex-branding-text large success">Large Success Message</div>
+
+      <div class="code-block">&lt;BrandingText Text="Small Warning Alert" CssClass="small warning" /&gt;</div>
+      <div class="larouex-branding-text small warning">Small Warning Alert</div>
+    </div>
+
+    <div class="demo-section">
+      <h2>📋 Component Usage</h2>
+      <p>To use this component in your Blazor application:</p>
+
+      <h3>1. Install the Package</h3>
+      <div class="code-block">dotnet add package LarouexSoftwareDevelopment.LarouexComponents</div>
+
+      <h3>2. Add the Using Statement</h3>
+      <div class="code-block">@using LarouexSoftwareDevelopment.LarouexComponents</div>
+
+      <h3>3. Use the Component</h3>
+      <div class="code-block">&lt;BrandingText Text="Your custom text" CssClass="large success" /&gt;</div>
+    </div>
+
+    <div class="demo-section">
+      <h2>✨ Interactive Features</h2>
+      <p>The component includes interactive hover effects. Try hovering over any of the components above!</p>
+      <div class="larouex-branding-text">Hover over me to see the effect!</div>
+    </div>
+  </div>
+</body>
+
+</html>
