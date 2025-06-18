@@ -89,18 +89,21 @@ Components/
 ## 📁 File Naming Conventions
 
 ### Component Files
+
 - **Component**: `ComponentName.razor`
 - **Styles**: `ComponentName.razor.css`
 - **Tests**: `ComponentNameTests.cs`
 - **Documentation**: `README.md` (in component folder)
 
 ### Supporting Files
+
 - **Enums**: `ComponentEnums.cs`, `[Feature]Enums.cs`
 - **Interfaces**: `I[ComponentName].cs`
 - **Base Classes**: `[ComponentName]Base.cs`
 - **Utilities**: `[Feature]Utilities.cs`
 
 ### Documentation Files
+
 - **Main docs**: `README.md`, `CHANGELOG.md`
 - **Guides**: `[TOPIC]_GUIDE.md` (e.g., `TESTING_GUIDE.md`)
 - **Standards**: `[AREA]_STANDARDS.md` (e.g., `CSS_STANDARDS.md`)
@@ -108,6 +111,7 @@ Components/
 ## 🎯 Component Organization Rules
 
 ### Individual Component Structure
+
 Each component should have its own folder containing:
 
 ```
@@ -123,6 +127,7 @@ ComponentName/
 ```
 
 ### Shared Resources
+
 ```
 Shared/
 ├── Enums/
@@ -143,6 +148,7 @@ Shared/
 ## 📦 Package Organization
 
 ### NuGet Package Structure
+
 ```
 LarouexSoftwareDevelopment.LarouexComponents/
 ├── lib/
@@ -158,6 +164,7 @@ LarouexSoftwareDevelopment.LarouexComponents/
 ```
 
 ### Multiple Package Strategy (Future)
+
 ```
 LarouexSoftwareDevelopment.LarouexComponents.Core/      # Base components
 LarouexSoftwareDevelopment.LarouexComponents.Forms/     # Form components
@@ -210,6 +217,7 @@ docs/                                  # [Future] Documentation site
 ## 🔧 Configuration Files
 
 ### Project Root Configuration
+
 - `.editorconfig` - Code formatting rules
 - `.gitignore` - Git ignore patterns
 - `nuget.config` - NuGet package sources
@@ -217,12 +225,14 @@ docs/                                  # [Future] Documentation site
 - `global.json` - .NET SDK version
 
 ### GitHub Configuration
+
 - `.github/workflows/` - CI/CD pipelines
 - `.github/ISSUE_TEMPLATE/` - Issue templates
 - `.github/PULL_REQUEST_TEMPLATE.md` - PR template
 - `.github/copilot-instructions.md` - AI assistant rules
 
 ### VS Code Configuration
+
 - `.vscode/tasks.json` - Build tasks
 - `.vscode/launch.json` - Debug configuration
 - `.vscode/settings.json` - Workspace settings

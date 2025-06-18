@@ -7,6 +7,7 @@ This document outlines the comprehensive development standards for LarouexCompon
 Use this template when creating new components:
 
 ### Component File Structure
+
 ```
 /[ComponentName]/
   [ComponentName].razor
@@ -16,23 +17,24 @@ Use this template when creating new components:
 ```
 
 ### Component Template (`ComponentName.razor`)
+
 ```razor
 @namespace LarouexSoftwareDevelopment.LarouexComponents
 @using Microsoft.AspNetCore.Components
 @using Microsoft.AspNetCore.Components.Web
 
-<div class="larouex-component-name @CssClass @GetThemeClass() @GetSizeClass()" 
+<div class="larouex-component-name @CssClass @GetThemeClass() @GetSizeClass()"
      @attributes="AdditionalAttributes">
-    
+
     @if (!string.IsNullOrEmpty(Title))
     {
         <h3 class="larouex-component-name__title">@Title</h3>
     }
-    
+
     <div class="larouex-component-name__content">
         @ChildContent
     </div>
-    
+
 </div>
 
 @code {
@@ -105,121 +107,123 @@ Use this template when creating new components:
 ```
 
 ### CSS Template (`ComponentName.razor.css`)
+
 ```css
 /* Base component styles */
 .larouex-component-name {
-    --larouex-spacing: 16px;
-    --larouex-border-radius: 8px;
-    --larouex-transition: all 0.3s ease;
-    
-    display: block;
-    padding: var(--larouex-spacing);
-    border-radius: var(--larouex-border-radius);
-    transition: var(--larouex-transition);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --larouex-spacing: 16px;
+  --larouex-border-radius: 8px;
+  --larouex-transition: all 0.3s ease;
+
+  display: block;
+  padding: var(--larouex-spacing);
+  border-radius: var(--larouex-border-radius);
+  transition: var(--larouex-transition);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 /* Element styles */
 .larouex-component-name__title {
-    margin: 0 0 calc(var(--larouex-spacing) * 0.5) 0;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--larouex-text-color, #2c3e50);
+  margin: 0 0 calc(var(--larouex-spacing) * 0.5) 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--larouex-text-color, #2c3e50);
 }
 
 .larouex-component-name__content {
-    color: var(--larouex-text-color, #495057);
+  color: var(--larouex-text-color, #495057);
 }
 
 /* Size modifiers */
 .larouex-component-name--small {
-    --larouex-spacing: 12px;
-    font-size: 0.875rem;
+  --larouex-spacing: 12px;
+  font-size: 0.875rem;
 }
 
 .larouex-component-name--large {
-    --larouex-spacing: 24px;
-    font-size: 1.125rem;
+  --larouex-spacing: 24px;
+  font-size: 1.125rem;
 }
 
 .larouex-component-name--xl {
-    --larouex-spacing: 32px;
-    font-size: 1.25rem;
+  --larouex-spacing: 32px;
+  font-size: 1.25rem;
 }
 
 /* Theme modifiers */
 .larouex-component-name--primary {
-    --larouex-bg-color: #f8f9fa;
-    --larouex-border-color: #007bff;
-    --larouex-accent-color: #007bff;
-    
-    background-color: var(--larouex-bg-color);
-    border-left: 4px solid var(--larouex-border-color);
+  --larouex-bg-color: #f8f9fa;
+  --larouex-border-color: #007bff;
+  --larouex-accent-color: #007bff;
+
+  background-color: var(--larouex-bg-color);
+  border-left: 4px solid var(--larouex-border-color);
 }
 
 .larouex-component-name--secondary {
-    --larouex-bg-color: #f8f9fa;
-    --larouex-border-color: #6c757d;
-    --larouex-accent-color: #6c757d;
-    
-    background-color: var(--larouex-bg-color);
-    border-left: 4px solid var(--larouex-border-color);
+  --larouex-bg-color: #f8f9fa;
+  --larouex-border-color: #6c757d;
+  --larouex-accent-color: #6c757d;
+
+  background-color: var(--larouex-bg-color);
+  border-left: 4px solid var(--larouex-border-color);
 }
 
 .larouex-component-name--success {
-    --larouex-bg-color: #f8fff9;
-    --larouex-border-color: #28a745;
-    --larouex-accent-color: #28a745;
-    
-    background-color: var(--larouex-bg-color);
-    border-left: 4px solid var(--larouex-border-color);
+  --larouex-bg-color: #f8fff9;
+  --larouex-border-color: #28a745;
+  --larouex-accent-color: #28a745;
+
+  background-color: var(--larouex-bg-color);
+  border-left: 4px solid var(--larouex-border-color);
 }
 
 .larouex-component-name--warning {
-    --larouex-bg-color: #fffdf8;
-    --larouex-border-color: #ffc107;
-    --larouex-accent-color: #ffc107;
-    
-    background-color: var(--larouex-bg-color);
-    border-left: 4px solid var(--larouex-border-color);
+  --larouex-bg-color: #fffdf8;
+  --larouex-border-color: #ffc107;
+  --larouex-accent-color: #ffc107;
+
+  background-color: var(--larouex-bg-color);
+  border-left: 4px solid var(--larouex-border-color);
 }
 
 .larouex-component-name--danger {
-    --larouex-bg-color: #fff8f8;
-    --larouex-border-color: #dc3545;
-    --larouex-accent-color: #dc3545;
-    
-    background-color: var(--larouex-bg-color);
-    border-left: 4px solid var(--larouex-border-color);
+  --larouex-bg-color: #fff8f8;
+  --larouex-border-color: #dc3545;
+  --larouex-accent-color: #dc3545;
+
+  background-color: var(--larouex-bg-color);
+  border-left: 4px solid var(--larouex-border-color);
 }
 
 /* Interactive states */
 .larouex-component-name:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .larouex-component-name:focus-within {
-    outline: 2px solid var(--larouex-accent-color, #007bff);
-    outline-offset: 2px;
+  outline: 2px solid var(--larouex-accent-color, #007bff);
+  outline-offset: 2px;
 }
 
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
-    .larouex-component-name {
-        transition: none;
-    }
+  .larouex-component-name {
+    transition: none;
+  }
 }
 
 /* Responsive design */
 @media (max-width: 576px) {
-    .larouex-component-name {
-        --larouex-spacing: 12px;
-    }
+  .larouex-component-name {
+    --larouex-spacing: 12px;
+  }
 }
 ```
 
 ### Enums File (`ComponentEnums.cs`)
+
 ```csharp
 namespace LarouexSoftwareDevelopment.LarouexComponents;
 
@@ -250,6 +254,7 @@ public enum ComponentSize
 ## 🧪 Test Template
 
 ### Unit Test Template (`ComponentNameTests.cs`)
+
 ```csharp
 using Bunit;
 using Microsoft.Extensions.DependencyInjection;
@@ -327,6 +332,7 @@ public class ComponentNameTests : TestContext
 ## 📋 Quality Checklist
 
 ### Pre-Commit Checklist
+
 - [ ] Component follows naming conventions
 - [ ] All parameters have XML documentation
 - [ ] CSS classes follow BEM methodology
@@ -338,6 +344,7 @@ public class ComponentNameTests : TestContext
 - [ ] CHANGELOG updated (if applicable)
 
 ### Code Review Checklist
+
 - [ ] Component API is intuitive and consistent
 - [ ] Performance impact is minimal
 - [ ] Error handling is appropriate
@@ -349,6 +356,7 @@ public class ComponentNameTests : TestContext
 ## 🔧 Useful Commands
 
 ### Development Commands
+
 ```bash
 # Build the project
 dotnet build
@@ -368,6 +376,7 @@ dotnet add package NUnit3TestAdapter --version 4.4.2
 ```
 
 ### Git Commands for Component Development
+
 ```bash
 # Create new feature branch
 git checkout -b feature/new-component-name
