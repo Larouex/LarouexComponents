@@ -277,6 +277,66 @@ Longer description if needed
 - Always build in Release mode for packages
 - Run tests before committing
 
+---
+
+## 🚀 Development Environment & Debugging
+
+### VS Code Configuration
+
+The project includes comprehensive VS Code configuration for debugging and development:
+
+- **Debug Configuration**: Launch configurations for interactive component testing
+- **Demo Application**: Blazor Server app (`/Demo/`) for real-time component testing
+- **Build Tasks**: Automated build, pack, and watch tasks
+- **Extensions**: Recommended extensions for optimal development experience
+
+### Debugging Workflow
+
+1. **Start Debugging**: Press `F5` or `Run → Start Debugging` in VS Code
+2. **Select Configuration**: Choose "Launch LarouexComponents Demo"
+3. **Interactive Testing**: Test components with various parameters in real-time
+4. **Hot Reload**: Changes are reflected immediately during development
+
+### Demo Application Structure
+
+```
+/Demo/
+  Components/
+    App.razor              # Main app component
+    Routes.razor           # Routing configuration
+    Layout/
+      MainLayout.razor     # Main layout template
+    Pages/
+      Home.razor           # Component showcase page
+    _Imports.razor         # Global imports
+  Program.cs               # Blazor Server configuration
+  appsettings.json         # Application settings
+```
+
+## 📦 GitHub Publishing & CI/CD
+
+### Automated Publishing
+
+The project uses GitHub Actions for automated CI/CD:
+
+- **CI Pipeline**: Builds and tests on every push/PR
+- **Package Publishing**: Automatic NuGet package publishing on tagged releases
+- **GitHub Packages**: Private NuGet packages hosted on GitHub
+
+### Release Process
+
+1. **Update Version**: Increment version in `LarouexComponents.csproj`
+2. **Update Changelog**: Document changes in `CHANGELOG.md`
+3. **Commit Changes**: Stage and commit all changes
+4. **Create Tag**: `git tag v1.x.x` (following semantic versioning)
+5. **Push**: `git push origin main --tags`
+6. **Automatic Publishing**: GitHub Actions handles the rest
+
+### GitHub Actions Workflows
+
+- **CI Workflow** (`.github/workflows/ci.yml`): Continuous integration
+- **Publish Workflow** (`.github/workflows/publish-nuget.yml`): Package publishing
+
 ## 📋 Quality Gates
 
 ### Pre-commit Checklist

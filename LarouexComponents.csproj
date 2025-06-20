@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk.Razor">
-  <PropertyGroup>
+<Project Sdk="Microsoft.NET.Sdk.Razor">  <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>LarouexSoftwareDevelopment.LarouexComponents</PackageId>
     <PackageVersion>1.0.0</PackageVersion>
     <Authors>Larouex Software Development</Authors>
@@ -15,12 +15,15 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageReleaseNotes>See CHANGELOG.md for release notes</PackageReleaseNotes>  </PropertyGroup>
-
   <ItemGroup>
     <Compile Remove="Tests/**" />
     <Content Remove="Tests/**" />
     <EmbeddedResource Remove="Tests/**" />
     <None Remove="Tests/**" />
+    <Compile Remove="Demo/**" />
+    <Content Remove="Demo/**" />
+    <EmbeddedResource Remove="Demo/**" />
+    <None Remove="Demo/**" />
   </ItemGroup>
 
   <ItemGroup>

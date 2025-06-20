@@ -1,7 +1,9 @@
+@namespace LarouexSoftwareDevelopment.LarouexComponents
 @using Microsoft.AspNetCore.Components
 @using Microsoft.AspNetCore.Components.Web
+@using System.Linq
 
-<div class="larouex-branding-text @CssClass">
+<div class="larouex-branding-text @GetCssClasses()">
   @Text
 </div>
 
@@ -13,8 +15,57 @@
   public string Text { get; set; } = "Larouex Software Development";
 
   /// <summary>
+  /// The size variant of the component
+  /// </summary>
+  [Parameter]
+  public ComponentSize Size { get; set; } = ComponentSize.Medium;
+
+  /// <summary>
+  /// The theme variant of the component
+  /// </summary>
+  [Parameter]
+  public ComponentTheme Theme { get; set; } = ComponentTheme.Primary;
+
+  /// <summary>
   /// Additional CSS classes to apply to the component
   /// </summary>
   [Parameter]
   public string CssClass { get; set; } = "";
+
+  /// <summary>
+  /// Builds the CSS classes for the component based on its parameters
+  /// </summary>
+  /// <returns>A string containing all applicable CSS classes</returns>
+  private string GetCssClasses()
+  {
+    var classes = new System.Collections.Generic.List<string>();
+
+    // Add size class
+    classes.Add(Size switch
+    {
+      ComponentSize.Small => "small",
+      ComponentSize.Large => "large",
+      _ => ""
+    });
+
+    // Add theme class
+    classes.Add(Theme switch
+    {
+      ComponentTheme.Primary => "primary",
+      ComponentTheme.Secondary => "secondary",
+      ComponentTheme.Success => "success",
+      ComponentTheme.Warning => "warning",
+      ComponentTheme.Danger => "danger",
+      _ => "primary"
+    });
+
+    // Add any additional CSS classes
+    if (!string.IsNullOrEmpty(CssClass))
+    {
+      classes.Add(CssClass);
+    }
+
+    return string.Join(" ", classes.Where(c => !string.IsNullOrEmpty(c)));
+  }
 }
+  

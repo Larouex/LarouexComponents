@@ -42,6 +42,63 @@
 			"problemMatcher": [
 				"$msCompile"
 			]
+		},
+		{
+			"label": "build-demo",
+			"type": "shell",
+			"command": "dotnet",
+			"args": [
+				"build",
+				"${workspaceFolder}/Demo/LarouexComponents.Demo.csproj",
+				"/property:GenerateFullPaths=true",
+				"/consoleloggerparameters:NoSummary"
+			],
+			"group": "build",
+			"presentation": {
+				"reveal": "silent"
+			},
+			"problemMatcher": [
+				"$msCompile"
+			]
+		},
+		{
+			"label": "watch-demo",
+			"type": "shell",
+			"command": "dotnet",
+			"args": [
+				"watch",
+				"run",
+				"--project",
+				"${workspaceFolder}/Demo/LarouexComponents.Demo.csproj"
+			],
+			"group": "build",
+			"isBackground": true,
+			"problemMatcher": [
+				{
+					"owner": "dotnet",
+					"source": "project",
+					"fileLocation": [
+						"relative",
+						"${cwd}"
+					],
+					"pattern": [
+						{
+							"regexp": "^(.*)\\((\\d+),(\\d+)\\):\\s+(error|warning|info)\\s+(\\w{1,2}\\d+):\\s+(.*)$",
+							"file": 1,
+							"line": 2,
+							"column": 3,
+							"severity": 4,
+							"code": 5,
+							"message": 6
+						}
+					],
+					"background": {
+						"activeOnStart": true,
+						"beginsPattern": "^info: Microsoft.Hosting.Lifetime",
+						"endsPattern": "^info: Microsoft.Hosting.Lifetime.*Application started\\. Press Ctrl\\+C to shut down\\."
+					}
+				}
+			]
 		}
 	]
 }

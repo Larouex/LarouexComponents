@@ -1,0 +1,193 @@
+@page "/"
+@using LarouexSoftwareDevelopment.LarouexComponents
+
+<PageTitle>LarouexComponents Demo</PageTitle>
+
+<div class="container">
+    <h1>🚀 LarouexComponents Demo</h1>
+    <p class="lead">Interactive demo of all available components in the LarouexComponents library.</p>
+
+    <div class="demo-section">
+        <h2>BrandingText Component</h2>
+        <p>The BrandingText component displays branded text with various styling options.</p>
+
+        <h3>Default Usage</h3>
+        <div class="component-example">
+            <BrandingText Text="Welcome to Larouex Software Development" />
+        </div>
+        <div class="code-block">
+            &lt;BrandingText Text="Welcome to Larouex Software Development" /&gt;
+        </div>
+
+        <h3>Size Variations</h3>
+        <div class="component-example">
+            <BrandingText Text="Small Text" Size="ComponentSize.Small" />
+            <BrandingText Text="Normal Text" Size="ComponentSize.Medium" />
+            <BrandingText Text="Large Text" Size="ComponentSize.Large" />
+        </div>
+        <div class="code-block">
+            &lt;BrandingText Text="Small Text" Size="ComponentSize.Small" /&gt;<br />
+            &lt;BrandingText Text="Normal Text" Size="ComponentSize.Medium" /&gt;<br />
+            &lt;BrandingText Text="Large Text" Size="ComponentSize.Large" /&gt;
+        </div>
+
+        <h3>Theme Variations</h3>
+        <div class="component-example">
+            <BrandingText Text="Primary Theme" Theme="ComponentTheme.Primary" />
+            <BrandingText Text="Success Theme" Theme="ComponentTheme.Success" />
+            <BrandingText Text="Warning Theme" Theme="ComponentTheme.Warning" />
+            <BrandingText Text="Danger Theme" Theme="ComponentTheme.Danger" />
+            <BrandingText Text="Secondary Theme" Theme="ComponentTheme.Secondary" />
+        </div>
+        <div class="code-block">
+            &lt;BrandingText Text="Primary Theme" Theme="ComponentTheme.Primary" /&gt;<br />
+            &lt;BrandingText Text="Success Theme" Theme="ComponentTheme.Success" /&gt;<br />
+            &lt;BrandingText Text="Warning Theme" Theme="ComponentTheme.Warning" /&gt;<br />
+            &lt;BrandingText Text="Danger Theme" Theme="ComponentTheme.Danger" /&gt;<br />
+            &lt;BrandingText Text="Secondary Theme" Theme="ComponentTheme.Secondary" /&gt;
+        </div>
+
+        <h3>Combined Variations</h3>
+        <div class="component-example">
+            <BrandingText Text="Large Success Text" Size="ComponentSize.Large" Theme="ComponentTheme.Success" />
+            <BrandingText Text="Small Warning Text" Size="ComponentSize.Small" Theme="ComponentTheme.Warning" />
+        </div>
+        <div class="code-block">
+            &lt;BrandingText Text="Large Success Text" Size="ComponentSize.Large" Theme="ComponentTheme.Success" /&gt;<br />
+            &lt;BrandingText Text="Small Warning Text" Size="ComponentSize.Small" Theme="ComponentTheme.Warning" /&gt;
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Interactive Testing</h2>
+        <p>Use the controls below to test different configurations:</p>
+        
+        <div class="form-group">
+            <label for="textInput">Text:</label>
+            <input @bind="demoText" id="textInput" class="form-control" />
+        </div>
+        
+        <div class="form-group">
+            <label for="sizeSelect">Size:</label>
+            <select @bind="demoSize" id="sizeSelect" class="form-control">
+                <option value="@ComponentSize.Small">Small</option>
+                <option value="@ComponentSize.Medium">Medium</option>
+                <option value="@ComponentSize.Large">Large</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="themeSelect">Theme:</label>
+            <select @bind="demoTheme" id="themeSelect" class="form-control">
+                <option value="@ComponentTheme.Primary">Primary</option>
+                <option value="@ComponentTheme.Secondary">Secondary</option>
+                <option value="@ComponentTheme.Success">Success</option>
+                <option value="@ComponentTheme.Warning">Warning</option>
+                <option value="@ComponentTheme.Danger">Danger</option>
+            </select>
+        </div>
+
+        <h3>Live Preview</h3>
+        <div class="component-example">
+            <BrandingText Text="@demoText" Size="@demoSize" Theme="@demoTheme" />
+        </div>
+    </div>
+</div>
+
+@code {
+    private string demoText = "Live Demo Text";
+    private ComponentSize demoSize = ComponentSize.Medium;
+    private ComponentTheme demoTheme = ComponentTheme.Primary;
+}
+
+<style>
+    .container {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 1200px;
+    }
+
+    .lead {
+        font-size: 1.2rem;
+        color: #6c757d;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    h1 {
+        color: #2c3e50;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .demo-section {
+        margin: 30px 0;
+        padding: 20px;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        background-color: #fdfdfd;
+    }
+
+    .demo-section h2 {
+        color: #495057;
+        margin-top: 0;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 5px;
+    }
+
+    .demo-section h3 {
+        color: #6c757d;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .component-example {
+        margin: 15px 0;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-left: 4px solid #007bff;
+        border-radius: 4px;
+    }
+
+    .code-block {
+        background-color: #f1f3f4;
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+        padding: 10px;
+        margin: 10px 0;
+        font-family: 'Courier New', monospace;
+        font-size: 0.9rem;
+        overflow-x: auto;
+        white-space: pre-wrap;
+    }
+
+    .form-group {
+        margin: 15px 0;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 600;
+        color: #495057;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 8px 12px;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        font-size: 1rem;
+        box-sizing: border-box;
+    }
+
+    .form-control:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+    }
+</style>
